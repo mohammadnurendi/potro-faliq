@@ -65,7 +65,7 @@
   let raf=0;
   const update=()=>{
     raf=0;
-    if(isReduced())return;
+    if(isReduced()||!fine.matches)return;
     const vh=window.innerHeight;
     shapes.forEach(el=>{const container=el.parentElement; if(!container)return;const r=container.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;const depth=Number(el.dataset.depth)||0;const offset=(vh/2-r.top-r.height/2)*depth;el.style.translate=`0 ${Math.max(-110,Math.min(110,offset))}px`});
     headings.forEach(el=>{const r=el.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;const p=Math.max(0,Math.min(1,(vh-r.top)/(vh+r.height)));el.style.scale=String(.975+.025*p)});

@@ -1,4 +1,14 @@
-# FALIQ. — Cinematic Interactive Portfolio v1.5
+# FALIQ. — Cinematic Interactive Portfolio v1.6
+
+Versi 1.6 mengganti ikon kontak dan navigasi dengan SVG lokal serta merapikan tampilan HP:
+
+- Logo WhatsApp dan Instagram sesuai layanan; ikon email, unduh, panah, dan tutup tampil konsisten.
+- Layout adaptif mulai 320px, termasuk portrait, landscape, tablet, dan desktop.
+- Safe area iPhone, tombol sentuh minimal 44px, menu yang dapat digulir, serta popup foto dan sertifikat yang tetap dapat dibaca.
+- Scroll halaman kembali ke posisi semula setelah popup ditutup; gesture vertikal tidak mengganti foto.
+- Navigasi keyboard tetap berada dalam menu/popup yang sedang terbuka.
+
+Hasil uji dan cara menjalankan pemeriksaan browser ada di `docs/QA_V1_6.md`.
 
 Versi 1.5 menambahkan delapan kategori motion ringan dan memperbarui UI sesuai revisi.
 

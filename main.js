@@ -4,6 +4,23 @@
   const $=(s,ctx=document)=>ctx.querySelector(s), $$=(s,ctx=document)=>Array.from(ctx.querySelectorAll(s));
   const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
   const CONFIG=window.FALIQ_SITE_CONFIG||{};
+  const touchLayout=window.matchMedia('(max-width: 840px), (hover: none), (pointer: coarse)');
+  const icon=name=>`<svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#${name}"></use></svg>`;
+
+  // Fixed-body locking also prevents background scrolling in iOS Safari.
+  let lockedScrollY=0, bodyIsLocked=false;
+  const syncScrollLock=()=>{
+    const shouldLock=document.body.classList.contains('menu-open')||document.body.classList.contains('modal-open');
+    if(shouldLock===bodyIsLocked) return;
+    bodyIsLocked=shouldLock;
+    if(shouldLock){
+      lockedScrollY=window.scrollY;
+      Object.assign(document.body.style,{position:'fixed',top:`-${lockedScrollY}px`,left:'0',right:'0',width:'100%'});
+    }else{
+      ['position','top','left','right','width'].forEach(prop=>document.body.style.removeProperty(prop));
+      window.scrollTo({top:lockedScrollY,behavior:'instant'});
+    }
+  };
 
   const activityGroups=[
     {cat:'sosial',tag:'KEGIATAN SOSIAL',title:'Aksi Sosial & Kolaborasi Lapangan',description:'Dokumentasi kegiatan lapangan, pengabdian sosial, dan momen kebersamaan bersama masyarakat.',note:'Kumpulan foto ditampilkan satu per satu agar pengalaman visual terasa lebih rapi dan hidup.',images:['assets/gallery/activity-01.webp','assets/gallery/activity-03.webp','assets/gallery/activity-13.webp'],cover:'assets/gallery/activity-01.webp'},
@@ -34,9 +51,22 @@
 
   // menu
   const menuButton=$('#menuToggle'), mobileMenu=$('#mobileMenu');
-  const setMenu=open=>{document.body.classList.toggle('menu-open',open); menuButton?.setAttribute('aria-expanded',String(open)); if(mobileMenu) mobileMenu.inert=!open;};
+  const setMenu=open=>{
+    document.body.classList.toggle('menu-open',open);
+    menuButton?.setAttribute('aria-expanded',String(open));
+    menuButton?.setAttribute('aria-label',open?'Tutup menu':'Buka menu');
+    if(mobileMenu) mobileMenu.inert=!open;
+    $('#main').inert=open;
+    syncScrollLock();
+    if(open){mobileMenu.scrollTop=0;mobileMenu.querySelector('a')?.focus({preventScroll:true});}
+    else menuButton?.focus({preventScroll:true});
+  };
   menuButton?.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
   $$('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  $('.wordmark')?.addEventListener('click',()=>{if(document.body.classList.contains('menu-open')) setMenu(false);});
+  window.matchMedia('(max-width: 1100px)').addEventListener('change',e=>{
+    if(!e.matches&&document.body.classList.contains('menu-open')) setMenu(false);
+  });
 
   // gallery
   const grid=$('#activityGrid');
@@ -44,7 +74,7 @@
     if(!grid) return; grid.innerHTML='';
     activityGroups.filter(item=>filter==='all'||item.cat===filter).forEach((item,idx)=>{
       const btn=document.createElement('button'); btn.type='button'; btn.className='gallery-card reveal-in'; btn.style.setProperty('--delay',`${idx*55}ms`);
-      btn.innerHTML=`<img src="${item.cover}" alt="${item.title}" loading="lazy" width="960" height="720"/><span class="gallery-arrow" aria-hidden="true">↗</span><div class="gallery-card-text"><span>${item.tag}</span><h3>${item.title}</h3><small>${item.images.length} foto</small></div>`;
+      btn.innerHTML=`<img src="${item.cover}" alt="${item.title}" loading="lazy" width="960" height="720"/><span class="gallery-arrow" aria-hidden="true">${icon('arrow-up-right')}</span><div class="gallery-card-text"><span>${item.tag}</span><h3>${item.title}</h3><small>${item.images.length} foto</small></div>`;
       btn.setAttribute('aria-label',`Lihat detail ${item.title}`);
       btn.addEventListener('click',()=>openModal({tag:item.tag,title:item.title,description:item.description,note:item.note,images:item.images,openFile:item.images[0]}));
       grid.appendChild(btn);
@@ -69,8 +99,10 @@
     const src=images[index]; modalImage.src=src; modalImage.alt=`${$('#modalTitle').textContent} — gambar ${index+1}`; modalOpenFile.href=modalState.originalLinks[index]||src;
     $('#modalCount').textContent=`${String(index+1).padStart(2,'0')} / ${String(images.length).padStart(2,'0')}`;
     modalPrev.hidden=modalNext.hidden=images.length<2;
+    const restoreThumbFocus=modalThumbs.contains(document.activeElement);
     modalThumbs.innerHTML='';
-    images.forEach((img,i)=>{const b=document.createElement('button'); b.type='button'; b.className='modal-thumb'+(i===index?' active':''); b.innerHTML=`<img src="${img}" alt="Thumbnail ${i+1}" loading="lazy">`; b.addEventListener('click',()=>{modalState.index=i; renderModalImage();}); modalThumbs.appendChild(b);});
+    images.forEach((img,i)=>{const b=document.createElement('button'); b.type='button'; b.className='modal-thumb'+(i===index?' active':''); b.setAttribute('aria-label',`Lihat foto ${i+1}`); b.setAttribute('aria-pressed',String(i===index)); b.innerHTML=`<img src="${img}" alt="" loading="lazy">`; b.addEventListener('click',()=>{modalState.index=i; renderModalImage();}); modalThumbs.appendChild(b);});
+    if(restoreThumbFocus) modalThumbs.children[index]?.focus({preventScroll:true});
   }
   modalImage.addEventListener('load',setModalOrientation);
   function openModal({tag,title,description,note,images,originalLinks}){
@@ -79,13 +111,26 @@
     modalState={images:[...(images||[])], index:0, originalLinks:[...(originalLinks||[])]};
     renderModalImage();
     modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open');
-    requestAnimationFrame(()=>$('.modal-close',modal)?.focus());
+    $('#main').inert=true; $('.site-header').inert=true;
+    syncScrollLock(); modal.scrollTop=0; modalPanel.scrollTop=0;
+    requestAnimationFrame(()=>$('.modal-close',modal)?.focus({preventScroll:true}));
   }
-  function closeModal(){ if(!modal.classList.contains('open')) return; modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open'); modalImage.removeAttribute('src'); modalThumbs.innerHTML=''; modalPanel.classList.remove('portrait-media','landscape-media','square-media'); lastFocus?.focus(); }
+  function closeModal(){ if(!modal.classList.contains('open')) return; modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open'); $('#main').inert=false; $('.site-header').inert=false; syncScrollLock(); modalImage.removeAttribute('src'); modalThumbs.innerHTML=''; modalPanel.classList.remove('portrait-media','landscape-media','square-media'); lastFocus?.focus({preventScroll:true}); }
   function shiftModal(step){ if(modalState.images.length<2) return; modalState.index=(modalState.index+step+modalState.images.length)%modalState.images.length; renderModalImage(); }
   $$('[data-close-modal]').forEach(el=>el.addEventListener('click',closeModal));
   modalPrev?.addEventListener('click',()=>shiftModal(-1)); modalNext?.addEventListener('click',()=>shiftModal(1));
-  let startX=null; $('.modal-stage')?.addEventListener('touchstart',e=>{startX=e.touches[0]?.clientX??null;},{passive:true}); $('.modal-stage')?.addEventListener('touchend',e=>{if(startX===null)return;const dx=(e.changedTouches[0]?.clientX??startX)-startX;startX=null;if(Math.abs(dx)<35)return;shiftModal(dx<0?1:-1);},{passive:true});
+  function bindSwipe(element,threshold,onSwipe){
+    let start=null;
+    element?.addEventListener('touchstart',e=>{start=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null;},{passive:true});
+    element?.addEventListener('touchcancel',()=>{start=null;},{passive:true});
+    element?.addEventListener('touchend',e=>{
+      if(!start) return;
+      const end=e.changedTouches[0],dx=(end?.clientX??start.x)-start.x,dy=(end?.clientY??start.y)-start.y;
+      start=null;
+      if(Math.abs(dx)>=threshold&&Math.abs(dx)>Math.abs(dy)*1.25) onSwipe(dx<0?1:-1);
+    },{passive:true});
+  }
+  bindSwipe($('.modal-stage'),35,shiftModal);
 
   // certificates
   let certIdx=0; const certImage=$('#certImage');
@@ -95,10 +140,19 @@
   const openCert=()=>{const c=certificates[certIdx]; openModal({tag:'CREDENTIALS / OPEN ACCESS',title:c.name,description:c.description,note:'Dokumen ditampilkan penuh dan terbuka sebagai bagian dari portofolio publik.',images:[c.image],originalLinks:[c.original]});};
   $('#certOpen')?.addEventListener('click',openCert); $('#certDetailBtn')?.addEventListener('click',openCert);
   $('#certShowcase')?.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();$('#certPrev').click()} if(e.key==='ArrowRight'){e.preventDefault();$('#certNext').click()}});
-  let certStart=null; $('#certShowcase')?.addEventListener('touchstart',e=>{certStart=e.touches[0]?.clientX??null;},{passive:true}); $('#certShowcase')?.addEventListener('touchend',e=>{if(certStart===null)return; const dx=(e.changedTouches[0]?.clientX??certStart)-certStart; certStart=null; if(Math.abs(dx)<40)return; (dx<0?$('#certNext'):$('#certPrev')).click(); },{passive:true});
+  bindSwipe($('#certShowcase'),40,step=>(step>0?$('#certNext'):$('#certPrev')).click());
   renderCert();
 
   document.addEventListener('keydown',e=>{
+    const activeOverlay=modal.classList.contains('open')?modal:document.body.classList.contains('menu-open')?mobileMenu:null;
+    if(e.key==='Tab'&&activeOverlay){
+      const focusable=$$('a[href],button:not([disabled]),[tabindex="0"]',activeOverlay).filter(el=>el.getClientRects().length&&!el.hidden);
+      if(activeOverlay===mobileMenu) focusable.unshift(menuButton);
+      const first=focusable[0],last=focusable[focusable.length-1];
+      if(!activeOverlay.contains(document.activeElement)&&!(activeOverlay===mobileMenu&&document.activeElement===menuButton)){e.preventDefault();(e.shiftKey?last:first)?.focus();}
+      else if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}
+    }
     if(e.key==='Escape'){ if(modal.classList.contains('open')) closeModal(); if(document.body.classList.contains('menu-open')) setMenu(false); }
     if(modal.classList.contains('open')){ if(e.key==='ArrowLeft') shiftModal(-1); if(e.key==='ArrowRight') shiftModal(1); }
   });
@@ -115,10 +169,15 @@
   // scroll fx
   const hero=$('.hero'), portrait=$('.hero-portrait'), headline=$('.hero-copy'), blueDisc=$('.hero-blue-disc'), orbitOne=$('.hero-orbit-one'), orbitTwo=$('.hero-orbit-two'), progress=$('#scrollProgress');
   let ticking=false;
-  function updateScrollFX(){ ticking=false; const top=window.scrollY, max=document.documentElement.scrollHeight-window.innerHeight; if(progress) progress.style.width=`${Math.max(0,Math.min(100,max>0?top/max*100:0))}%`; if(hero && !reduceMotion.matches){ const heroHeight=hero.offsetHeight; const p=Math.min(1.15, Math.max(0, top/heroHeight)); portrait.style.transform=`translate3d(0,${p*54}px,0) scale(${1+p*0.22})`; blueDisc.style.transform=`translate3d(${p*-30}px,${p*8}px,0) scale(${1+p*0.15})`; if(orbitOne) orbitOne.style.transform=`translate3d(${p*14}px,${p*22}px,0) rotate(${p*14}deg)`; if(orbitTwo) orbitTwo.style.transform=`translate3d(${p*-18}px,${p*-16}px,0) rotate(${p*-14}deg)`; if(headline){ headline.style.opacity=String(Math.max(.06,1-p*1.18)); headline.style.transform=window.innerWidth<=840?`translate3d(0,-${p*26}px,0)`:`translate3d(0,calc(-47% - ${p*62}px),0)`; } }
+  function updateScrollFX(){ ticking=false; const top=bodyIsLocked?lockedScrollY:window.scrollY, max=document.documentElement.scrollHeight-window.innerHeight; if(progress&&!bodyIsLocked) progress.style.width=`${Math.max(0,Math.min(100,max>0?top/max*100:0))}%`;
+    if(touchLayout.matches||reduceMotion.matches){
+      [portrait,blueDisc,orbitOne,orbitTwo,headline].forEach(el=>el?.style.removeProperty('transform'));
+      headline?.style.removeProperty('opacity');
+    }else if(hero){ const heroHeight=hero.offsetHeight; const p=Math.min(1.15, Math.max(0, top/heroHeight)); portrait.style.transform=`translate3d(0,${p*54}px,0) scale(${1+p*0.22})`; blueDisc.style.transform=`translate3d(${p*-30}px,${p*8}px,0) scale(${1+p*0.15})`; if(orbitOne) orbitOne.style.transform=`translate3d(${p*14}px,${p*22}px,0) rotate(${p*14}deg)`; if(orbitTwo) orbitTwo.style.transform=`translate3d(${p*-18}px,${p*-16}px,0) rotate(${p*-14}deg)`; if(headline){ headline.style.opacity=String(Math.max(.06,1-p*1.18)); headline.style.transform=`translate3d(0,calc(-47% - ${p*62}px),0)`; } }
     updateJourney();
   }
   window.addEventListener('scroll',()=>{ if(!ticking){ requestAnimationFrame(updateScrollFX); ticking=true; } },{passive:true});
   window.addEventListener('resize',()=>requestAnimationFrame(updateScrollFX),{passive:true});
+  reduceMotion.addEventListener('change',()=>requestAnimationFrame(updateScrollFX));
   updateScrollFX();
 })();

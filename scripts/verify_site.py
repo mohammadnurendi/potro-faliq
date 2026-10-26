@@ -4,10 +4,11 @@ from pathlib import Path
 from html.parser import HTMLParser
 import re
 import sys
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 issues = []
-required = ['index.html','main.js','styles.css','site-config.js','assets/portrait/faliq-main.webp','assets/Faliq_Azhar_CV.pdf','motion-v15.js']
+required = ['index.html','main.js','styles.css','site-config.js','assets/portrait/faliq-main.webp','assets/Faliq_Azhar_CV.pdf','motion-v15.js','assets/icons.svg']
 for name in required:
     if not (ROOT/name).is_file(): issues.append(f'Missing: {name}')
 
@@ -24,6 +25,14 @@ html = (ROOT/'index.html').read_text(encoding='utf-8')
 js = (ROOT/'main.js').read_text(encoding='utf-8')
 config = (ROOT/'site-config.js').read_text(encoding='utf-8')
 RefParser().feed(html)
+sprite = ROOT / 'assets/icons.svg'
+if sprite.is_file():
+    try:
+        symbols = {element.get('id') for element in ET.parse(sprite).iter() if element.tag.endswith('symbol')}
+        for name in re.findall(r'href="assets/icons\.svg#([^\"]+)"', html):
+            if name not in symbols: issues.append(f'Missing SVG icon: {name}')
+    except ET.ParseError as error:
+        issues.append(f'Invalid SVG sprite: {error}')
 for asset in re.findall(r'assets/gallery/[^\"\']+\.webp',js):
     if not (ROOT/asset).is_file(): issues.append(f'Missing gallery asset {asset}')
 for asset in re.findall(r'assets/certificates/[^\"\']+\.webp',js):
@@ -36,4 +45,4 @@ if not re.search(r'id="detailModal"',html): issues.append('Detail popup missing'
 if issues:
     print('FAILED:',*issues,sep='\n- ')
     sys.exit(1)
-print('PASS: required files, referenced assets, popup and contact URLs verified.')
+print('PASS: required files, referenced assets, SVG icons, popup and contact URLs verified.')
