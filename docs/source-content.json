@@ -1,0 +1,516 @@
+{
+  "schemaVersion": "1.0",
+  "reviewStatus": "DRAFT — perlu persetujuan Faliq dan verifikasi media sebelum publikasi",
+  "site": {
+    "name": "FALIQ.",
+    "locale": "id-ID",
+    "title": "Faliq Azhar Abdurrahman, S.Tr.Sos. | Portofolio Pekerjaan Sosial",
+    "description": "Portofolio Faliq Azhar Abdurrahman: pengalaman dalam pekerjaan sosial, rehabilitasi sosial, pendampingan, pendidikan, dan pemberdayaan masyarakat.",
+    "style": "Bold minimalist, cinematic scroll, Indonesian-first bilingual accents",
+    "colors": {
+      "midnight": "#0B1020",
+      "warmWhite": "#F5F3EE",
+      "electricBlue": "#2F5BFF",
+      "orange": "#F36B2B"
+    }
+  },
+  "profile": {
+    "displayName": "FALIQ AZHAR.",
+    "fullName": "Faliq Azhar Abdurrahman, S.Tr.Sos.",
+    "profession": "Pekerjaan Sosial & Pemberdayaan Masyarakat",
+    "englishLabel": "SOCIAL WORK · COMMUNITY EMPOWERMENT",
+    "tagline": "Bekerja dengan empati. Bergerak untuk perubahan.",
+    "location": "Bandung, Indonesia",
+    "portrait": "portrait-hd-new.png",
+    "portraitTransparencyVerified": false,
+    "contact": {
+      "email": "faliqazhar94@gmail.com",
+      "whatsapp": "081395118142",
+      "publicUseApproved": false
+    },
+    "cvPdf": "pending-public-pdf"
+  },
+  "sections": {
+    "hero": {
+      "eyebrow": "SOCIAL WORK · COMMUNITY EMPOWERMENT",
+      "headline": "FALIQ AZHAR.",
+      "fullName": "Faliq Azhar Abdurrahman, S.Tr.Sos.",
+      "subheadline": "Bekerja dengan empati. Bergerak untuk perubahan.",
+      "supporting": "Portofolio pengalaman, pembelajaran, dan kontribusi dalam bidang pekerjaan sosial.",
+      "primaryCta": "Jelajahi Perjalanan",
+      "secondaryCta": "Unduh CV",
+      "scrollHint": "SCROLL TO EXPLORE"
+    },
+    "about": {
+      "eyebrow": "02 / ABOUT ME",
+      "headline": "Setiap manusia punya cerita. Setiap proses layak didampingi.",
+      "paragraphs": [
+        "Saya lulusan Sarjana Terapan Pekerjaan Sosial dari Politeknik Kesejahteraan Sosial Bandung. Pengalaman praktik saya meliputi rehabilitasi sosial, pendampingan penyandang disabilitas, pemberdayaan masyarakat, serta pendidikan dan pengasuhan.",
+        "Melalui berbagai lingkungan praktik, saya belajar memahami kebutuhan individu dan kelompok, mendukung proses asesmen dan intervensi, serta membangun komunikasi yang menghargai martabat setiap orang. Bagi saya, pekerjaan sosial bukan sekadar menyelesaikan tugas, tetapi juga tentang kehadiran, tanggung jawab, dan kolaborasi."
+      ],
+      "skillsTitle": "Kompetensi yang saya kembangkan",
+      "hardSkills": [
+        "Asesmen Sosial",
+        "Manajemen Kasus",
+        "Rehabilitasi & Intervensi Sosial",
+        "Pendampingan Individu & Kelompok",
+        "Fasilitasi Kelompok",
+        "Pemberdayaan Masyarakat",
+        "Dokumentasi & Pelaporan",
+        "Microsoft Office & Canva"
+      ],
+      "softSkills": [
+        "Empati & Mendengarkan Aktif",
+        "Komunikasi Interpersonal",
+        "Kolaborasi Tim",
+        "Public Speaking",
+        "Pemecahan Masalah",
+        "Manajemen Waktu"
+      ]
+    },
+    "journey": {
+      "eyebrow": "03 / PROFESSIONAL JOURNEY",
+      "headline": "Perjalanan yang membentuk cara saya bekerja.",
+      "intro": "Dari lingkungan pengasuhan dan pendidikan hingga praktik rehabilitasi sosial dan pemberdayaan masyarakat, setiap pengalaman memperluas cara pandang saya terhadap kebutuhan dan potensi manusia.",
+      "experiences": [
+        {
+          "id": "teaching-2021",
+          "period": "2021–2022",
+          "start": "2021",
+          "end": "2022",
+          "title": "Pengurus & Guru",
+          "organization": "Wisma Yatim Assalam & Pondok Pesantren Baitul Hidayah Bandung",
+          "summary": "Terlibat dalam pengasuhan, pembinaan kedisiplinan, pendampingan hafalan Al-Qur'an, serta kegiatan pengajaran santri.",
+          "bullets": [
+            "Mendampingi santri dalam kegiatan sehari-hari, termasuk monitoring dan penegakan kedisiplinan.",
+            "Mendukung pendampingan hafalan Al-Qur'an.",
+            "Mengajar Bahasa Arab (Mahfudzat) sesuai peran yang tercantum dalam CV."
+          ],
+          "tags": [
+            "Pengasuhan",
+            "Pendidikan",
+            "Komunikasi"
+          ],
+          "relatedPhotoIds": [],
+          "photoMappingStatus": "needs-verification"
+        },
+        {
+          "id": "griya-harapan-2024",
+          "period": "Juli–Agustus 2024",
+          "start": "2024-07",
+          "end": "2024-08",
+          "title": "Asisten Pekerja Sosial Disabilitas (Magang)",
+          "organization": "UPTD PPS Griya Harapan, Dinas Sosial Jawa Barat",
+          "summary": "Mendukung pendampingan penerima manfaat dalam kegiatan pelatihan vokasional dan pengembangan keterampilan.",
+          "bullets": [
+            "Membantu pekerja sosial mengawasi dan mendampingi penerima manfaat saat pelatihan vokasional.",
+            "Mendukung kegiatan yang meliputi menjahit, tata boga, membatik, tata rias, dan pembelajaran bahasa isyarat."
+          ],
+          "tags": [
+            "Pendampingan Disabilitas",
+            "Vokasional",
+            "Rehabilitasi Sosial"
+          ],
+          "relatedPhotoIds": [],
+          "photoMappingStatus": "needs-verification"
+        },
+        {
+          "id": "bina-laras-jakarta-2025",
+          "period": "April–Juni 2025",
+          "start": "2025-04",
+          "end": "2025-06",
+          "title": "Asisten Pekerja Sosial (Magang)",
+          "organization": "Panti Sosial Bina Laras DKI Jakarta",
+          "summary": "Mengikuti proses pertolongan pekerjaan sosial, mulai dari tahap awal keterlibatan sampai pendampingan dan evaluasi layanan.",
+          "bullets": [
+            "Mendukung proses engagement/intake, asesmen, rencana intervensi, evaluasi, hingga terminasi.",
+            "Terlibat dalam kegiatan biometrik warga binaan sosial dengan berkolaborasi bersama Disdukcapil, sebagaimana tercantum pada CV.",
+            "Mendampingi layanan rawat jalan ke rumah sakit dan membantu kegiatan bimbingan sosial serta keterampilan."
+          ],
+          "tags": [
+            "Asesmen",
+            "Intervensi Sosial",
+            "Pendampingan"
+          ],
+          "relatedPhotoIds": [],
+          "photoMappingStatus": "needs-verification"
+        },
+        {
+          "id": "desa-darma-2025",
+          "period": "Juli–Desember 2025",
+          "start": "2025-07",
+          "end": "2025-12",
+          "title": "Praktik Kerja Lapangan (PKL)",
+          "organization": "Desa Darma, Kabupaten Kuningan",
+          "summary": "Berpartisipasi dalam identifikasi kebutuhan, asesmen, dan kegiatan intervensi sosial melalui sosialisasi serta pelatihan masyarakat.",
+          "bullets": [
+            "Melakukan identifikasi dan asesmen kebutuhan penerima manfaat.",
+            "Mendukung pelaksanaan intervensi melalui program sosialisasi dan pelatihan."
+          ],
+          "tags": [
+            "Pemberdayaan Masyarakat",
+            "Asesmen",
+            "Fasilitasi"
+          ],
+          "relatedPhotoIds": [],
+          "photoMappingStatus": "needs-verification"
+        },
+        {
+          "id": "sukarjaya-2025",
+          "period": "Agustus–September 2025",
+          "start": "2025-08",
+          "end": "2025-09",
+          "title": "Asisten Pekerja Sosial (Magang)",
+          "organization": "Satuan Pelayanan Bina Laras Sukarjaya, Sumedang",
+          "summary": "Mendukung asesmen awal, kegiatan intervensi kelompok, dan pendampingan kebutuhan harian klien dalam layanan sosial.",
+          "bullets": [
+            "Mendukung asesmen awal calon klien dan intervensi melalui kegiatan kelompok.",
+            "Membantu penanganan permasalahan harian dan pendampingan rawat jalan ke puskesmas.",
+            "Memberikan dukungan dalam kegiatan bimbingan sosial dan belajar."
+          ],
+          "tags": [
+            "Asesmen",
+            "Kerja Kelompok",
+            "Pendampingan"
+          ],
+          "relatedPhotoIds": [],
+          "photoMappingStatus": "needs-verification"
+        }
+      ],
+      "footnote": "Periode praktik Juli–Desember 2025 dan Agustus–September 2025 beririsan sesuai CV; timeline menampilkan tanggal masing-masing."
+    },
+    "activities": {
+      "eyebrow": "04 / FIELD ACTIVITIES",
+      "headline": "Cerita dari lapangan.",
+      "intro": "Dokumentasi kegiatan menjadi pengingat bahwa pekerjaan sosial dibangun melalui proses belajar, interaksi, pendampingan, dan kerja sama dengan berbagai pihak.",
+      "filters": [
+        "Semua",
+        "Rehabilitasi Sosial",
+        "Pendampingan Disabilitas",
+        "Pemberdayaan Masyarakat",
+        "Pendidikan & Pengasuhan"
+      ],
+      "cards": [
+        {
+          "id": "field-rehabilitation",
+          "headline": "Pendampingan dalam Layanan Rehabilitasi Sosial",
+          "eyebrow": "REHABILITASI SOSIAL",
+          "description": "Pengalaman praktik di layanan sosial membentuk pemahaman tentang pentingnya asesmen, rencana intervensi, komunikasi, dan pendampingan yang berkesinambungan.",
+          "relatedExperienceIds": [
+            "bina-laras-jakarta-2025",
+            "sukarjaya-2025"
+          ],
+          "photoIds": [],
+          "status": "copy-draft-no-verified-photo"
+        },
+        {
+          "id": "field-disability",
+          "headline": "Mendampingi Proses Belajar dan Keterampilan",
+          "eyebrow": "PENDAMPINGAN DISABILITAS",
+          "description": "Pendampingan pada kegiatan vokasional mengajarkan pentingnya kesabaran, kolaborasi, dan dukungan sesuai kebutuhan setiap penerima manfaat.",
+          "relatedExperienceIds": [
+            "griya-harapan-2024"
+          ],
+          "photoIds": [],
+          "status": "copy-draft-no-verified-photo"
+        },
+        {
+          "id": "field-community",
+          "headline": "Belajar Bersama Masyarakat",
+          "eyebrow": "PEMBERDAYAAN MASYARAKAT",
+          "description": "Kegiatan asesmen, sosialisasi, dan pelatihan menjadi bagian dari proses memahami kebutuhan dan mendukung partisipasi masyarakat.",
+          "relatedExperienceIds": [
+            "desa-darma-2025"
+          ],
+          "photoIds": [],
+          "status": "copy-draft-no-verified-photo"
+        },
+        {
+          "id": "field-education",
+          "headline": "Pengasuhan dan Pembinaan",
+          "eyebrow": "PENDIDIKAN & PENGASUHAN",
+          "description": "Pengalaman mendampingi dan mengajar santri memperkuat keterampilan komunikasi, kedisiplinan, dan tanggung jawab dalam lingkungan pendidikan.",
+          "relatedExperienceIds": [
+            "teaching-2021"
+          ],
+          "photoIds": [],
+          "status": "copy-draft-no-verified-photo"
+        }
+      ],
+      "photosReviewOnly": [
+        {
+          "id": "ASSET-01",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-02",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-03",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-05",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-06",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-07",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-08",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": true,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-09",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-10",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-11",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": true,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-12",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-13",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-15",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        },
+        {
+          "id": "ASSET-23",
+          "category": "activities",
+          "public": false,
+          "requiresConsentReview": true,
+          "requiresRedaction": false,
+          "restricted": false,
+          "mappedActivityId": null
+        }
+      ],
+      "popupLabels": {
+        "context": "Konteks Kegiatan",
+        "role": "Peran Saya",
+        "activity": "Aktivitas",
+        "relatedExperience": "Pengalaman Terkait",
+        "close": "Tutup Detail"
+      }
+    },
+    "education": {
+      "eyebrow": "05 / EDUCATION & LEADERSHIP",
+      "headline": "Belajar, mengabdi, bertumbuh.",
+      "intro": "Pendidikan formal, pengalaman pengasuhan, dan keterlibatan organisasi menjadi fondasi dalam membangun tanggung jawab, kepemimpinan, dan kerja sama.",
+      "schools": [
+        {
+          "name": "Politeknik Kesejahteraan Sosial Bandung",
+          "program": "D4 Pekerjaan Sosial",
+          "period": "2022–2026"
+        },
+        {
+          "name": "Pondok Pesantren Baitul Hidayah Bandung",
+          "program": "SMP & SMA",
+          "period": "2015–2021"
+        }
+      ],
+      "organizations": [
+        {
+          "organization": "Kementerian Agama BEM Poltekesos Bandung",
+          "role": "Direktur Jenderal Kesadaran Beragama",
+          "period": "2023–2024"
+        },
+        {
+          "organization": "Forum Komunikasi Mahasiswa Kesejahteraan Sosial Indonesia (Regional Jawa Barat)",
+          "role": "Staf Sosial Masyarakat",
+          "period": "2024–2025"
+        },
+        {
+          "organization": "Keluarga Mahasiswa Muslim Poltekesos Bandung",
+          "role": "Staf Divisi Syiar",
+          "period": "2023–2025"
+        },
+        {
+          "organization": "Organisasi Santri Baitul Hidayah (OSPBA)",
+          "role": "Ketua Keamanan",
+          "period": "2017–2018"
+        }
+      ]
+    },
+    "credentials": {
+      "eyebrow": "06 / CREDENTIALS",
+      "headline": "Belajar terus. Bertumbuh dengan bukti.",
+      "intro": "Sertifikasi dan penghargaan menjadi bagian dari perjalanan pengembangan kompetensi saya. Detail dokumen yang ditampilkan akan mengikuti informasi yang telah diverifikasi.",
+      "items": [
+        {
+          "id": "social-worker-competency",
+          "title": "Sertifikat Kompetensi Pekerja Sosial",
+          "issuer": "BNSP/LSP (tercantum pada CV; verifikasi lembaga penerbit pada dokumen)",
+          "period": "2025–2030 (menurut CV)",
+          "status": "verify-document-metadata",
+          "imageAssetId": null,
+          "detail": "Bukti kompetensi yang dicantumkan dalam CV. Detail nomor, unit kompetensi, lembaga penerbit, dan masa berlaku perlu dicek dari sertifikat asli."
+        },
+        {
+          "id": "english-certificate",
+          "title": "Sertifikat Kemampuan Bahasa Inggris (TOEFL, sesuai CV)",
+          "issuer": "Perlu verifikasi",
+          "period": "2025–2028 (menurut CV)",
+          "status": "verify-test-type-issuer-score-and-validity",
+          "imageAssetId": null,
+          "detail": "CV menyebut sertifikasi TOEFL dan tingkat kemampuan Intermediate hingga Upper Intermediate. Jenis tes, penyelenggara, dan skor tidak ditambahkan sebelum diverifikasi."
+        }
+      ],
+      "photosReviewOnly": [
+        {
+          "id": "ASSET-14",
+          "public": false,
+          "linkedCertificateId": null,
+          "status": "metadata-and-privacy-review"
+        },
+        {
+          "id": "ASSET-16",
+          "public": false,
+          "linkedCertificateId": null,
+          "status": "metadata-and-privacy-review"
+        },
+        {
+          "id": "ASSET-17",
+          "public": false,
+          "linkedCertificateId": null,
+          "status": "metadata-and-privacy-review"
+        },
+        {
+          "id": "ASSET-18",
+          "public": false,
+          "linkedCertificateId": null,
+          "status": "metadata-and-privacy-review"
+        },
+        {
+          "id": "ASSET-19",
+          "public": false,
+          "linkedCertificateId": null,
+          "status": "metadata-and-privacy-review"
+        },
+        {
+          "id": "ASSET-20",
+          "public": false,
+          "linkedCertificateId": null,
+          "status": "metadata-and-privacy-review"
+        },
+        {
+          "id": "ASSET-21",
+          "public": false,
+          "linkedCertificateId": null,
+          "status": "metadata-and-privacy-review"
+        },
+        {
+          "id": "ASSET-22",
+          "public": false,
+          "linkedCertificateId": null,
+          "status": "metadata-and-privacy-review"
+        }
+      ],
+      "popupLabels": {
+        "issuer": "Penerbit",
+        "period": "Periode",
+        "details": "Keterangan",
+        "close": "Tutup Sertifikat"
+      }
+    },
+    "contact": {
+      "eyebrow": "07 / LET'S CONNECT",
+      "headline": "Mari terhubung dan menciptakan dampak.",
+      "subtitle": "Terbuka untuk peluang profesional, kolaborasi lintas bidang, dan kegiatan sosial yang memberi manfaat.",
+      "ctaEmail": "Kirim Email",
+      "ctaWhatsapp": "Hubungi via WhatsApp",
+      "ctaCv": "Unduh CV",
+      "footer": "© 2026 Faliq Azhar Abdurrahman. Dibuat untuk berbagi perjalanan profesional."
+    }
+  },
+  "productionNotes": {
+    "defaultContactLinksEnabled": false,
+    "defaultActivitiesPhotosPublished": false,
+    "defaultCertificatesPublished": false,
+    "realPortraitWhiteBackgroundOpaque": true,
+    "sourceNote": "Foto HD terbaru disimpan sebagai RGBA tetapi alpha seluruh piksel 255; latar putih tampak sudah ada. Untuk compositing hero pada background gelap, perlu ekstraksi transparansi yang benar.",
+    "neverInventImpactMetrics": true,
+    "privacyReviewRequired": true,
+    "factualVerificationRequired": true
+  }
+}

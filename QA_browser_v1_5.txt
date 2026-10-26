@@ -1,0 +1,25 @@
+HTML KB 5923
+VIEW 1440 errors [] overflow 0
+ABOUT rgb(255, 255, 255)
+CONTACT linear-gradient(122deg, rgb(40, 77, 255) 0%, rgb(49, 91, 255) 60%, rgb(65, 102, 255) 100%)
+badge 0 logo img 0 portrait loaded 1534
+gallery modal count 3 modal image loaded 1280
+modal next count 02 / 03
+modal closed true
+CERT DEBUG {'open': 'modal open', 'src': 'data:image/webp;base64,UklGRiSLAQBXRUJQVlA4IBiLAQAQlQWdASrQArkDPikSiEMhoSER6hzYG', 'imgN': [720, 953], 'rect': {'x': 215, 'y': 63.53125, 'width': 1010, 'height': 772.9375, 'top': 63.53125, 'right': 1225, 'bottom': 836.46875, 'left': 215}, 'panelCss': 'matrix(1, 0, 0, 1, -505, -386.469)', 'z': '300'}
+VIEW 390 errors [] overflow 0
+ABOUT rgb(255, 255, 255)
+CONTACT linear-gradient(122deg, rgb(40, 77, 255) 0%, rgb(49, 91, 255) 60%, rgb(65, 102, 255) 100%)
+badge 0 logo img 0 portrait loaded 1534
+gallery modal count 3 modal image loaded 1280
+modal next count 02 / 03
+modal closed true
+CERT DEBUG {'open': 'modal open', 'src': 'data:image/webp;base64,UklGRiSLAQBXRUJQVlA4IBiLAQAQlQWdASrQArkDPikSiEMhoSER6hzYG', 'imgN': [720, 953], 'rect': {'x': 17.5546875, 'y': 33.765625, 'width': 354.890625, 'height': 776.46875, 'top': 33.765625, 'right': 372.4453125, 'bottom': 810.234375, 'left': 17.5546875}, 'panelCss': 'matrix(1, 0, 0, 1, -177.445, -388.234)', 'z': '300'}
+VIEW 320 errors [] overflow 0
+ABOUT rgb(255, 255, 255)
+CONTACT linear-gradient(122deg, rgb(40, 77, 255) 0%, rgb(49, 91, 255) 60%, rgb(65, 102, 255) 100%)
+badge 0 logo img 0 portrait loaded 1534
+gallery modal count 3 modal image loaded 1280
+modal next count 02 / 03
+modal closed true
+CERT DEBUG {'open': 'modal open', 'src': 'data:image/webp;base64,UklGRiSLAQBXRUJQVlA4IBiLAQAQlQWdASrQArkDPikSiEMhoSER6hzYG', 'imgN': [720, 953], 'rect': {'x': 14.40625, 'y': 28.8046875, 'width': 291.1875, 'height': 662.390625, 'top': 28.8046875, 'right': 305.59375, 'bottom': 691.1953125, 'left': 14.40625}, 'panelCss': 'matrix(1, 0, 0, 1, -145.594, -331.195)', 'z': '300'}
